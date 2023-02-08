@@ -16,4 +16,7 @@ part 'src/bubble/bubble_switcher.dart';
 // --------------------
 /// BUBBLE SEPARATOR
 part 'src/bubble_separator/bubbles_separator.dart';
+// --------------------
+/// TILE BUBBLE
+part 'src/tile_bubble/tile_bubble.dart';
 // ---------------------------------------------------------------------------

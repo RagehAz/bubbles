@@ -54,9 +54,9 @@ class Bubble extends StatelessWidget {
    */
   // --------------------
   static double getHeightWithoutChildren({
-    @required BubbleHeaderVM bubbleHeaderVM,
+    @required double headlineHeight,
   }){
-    return (_pageMargin * 3) + bubbleHeaderVM?.headlineHeight;
+    return (_pageMargin * 3) + headlineHeight;
     // return (_pageMargin * 3) + _getTitleHeight(context);
   }
   // --------------------
