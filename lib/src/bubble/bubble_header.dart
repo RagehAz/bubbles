@@ -76,6 +76,8 @@ class BubbleHeader extends StatelessWidget {
               margins: const EdgeInsets.only(bottom: BubbleHeaderVM.verseBottomMargin),
               highlight: viewModel.headlineHighlight,
               font: viewModel.font,
+              textDirection: viewModel.textDirection,
+              appIsLTR: viewModel.appIsLTR,
             ),
           ),
 
@@ -89,6 +91,11 @@ class BubbleHeader extends StatelessWidget {
               height: BubbleHeaderVM.leadingIconBoxSize,
               switchIsOn: viewModel.switchValue,
               onSwitch: viewModel.onSwitchTap,
+              switchActiveColor: viewModel.switchActiveColor,
+              switchDisabledColor: viewModel.switchDisabledColor,
+              switchDisabledTrackColor: viewModel.switchDisabledTrackColor,
+              switchFocusColor: viewModel.switchFocusColor,
+              switchTrackColor: viewModel.switchTrackColor,
             ),
 
           // const SizedBox(

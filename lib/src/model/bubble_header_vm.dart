@@ -24,6 +24,13 @@ class BubbleHeaderVM {
     this.headlineHeight = 30,
     this.moreButtonIcon = 'packages/bldrs_theme/lib/assets/icons/gi_more.svg',
     this.moreButtonIconSizeFactor = 0.6,
+    this.textDirection = TextDirection.ltr,
+    this.appIsLTR = true,
+    this.switchActiveColor = const Color.fromARGB(255, 255, 255, 255),
+    this.switchTrackColor = const Color.fromARGB(125, 20, 20, 35),
+    this.switchFocusColor = const Color.fromARGB(255, 20, 20, 80),
+    this.switchDisabledColor = const Color.fromARGB(150, 200, 200, 200),
+    this.switchDisabledTrackColor = const Color.fromARGB(80, 20, 20, 35),
   });
   // -----------------------------------------------------------------------------
   final double headerWidth;
@@ -46,6 +53,13 @@ class BubbleHeaderVM {
   final double headlineHeight;
   final String moreButtonIcon;
   final double moreButtonIconSizeFactor;
+  final TextDirection textDirection;
+  final bool appIsLTR;
+  final Color switchActiveColor;
+  final Color switchDisabledColor;
+  final Color switchDisabledTrackColor;
+  final Color switchFocusColor;
+  final Color switchTrackColor;
   // -----------------------------------------------------------------------------
 
   /// CONSTANTS
@@ -81,6 +95,11 @@ class BubbleHeaderVM {
     double headlineHeight,
     String moreButtonIcon,
     double moreButtonIconSizeFactor,
+    Color switchActiveColor,
+    Color switchDisabledColor,
+    Color switchDisabledTrackColor,
+    Color switchFocusColor,
+    Color switchTrackColor,
   }){
     return BubbleHeaderVM(
       headerWidth: headerWidth ?? this.headerWidth,
@@ -103,6 +122,11 @@ class BubbleHeaderVM {
       headlineHeight: headlineHeight ?? this.headlineHeight,
       moreButtonIcon: moreButtonIcon ?? this.moreButtonIcon,
       moreButtonIconSizeFactor: moreButtonIconSizeFactor ?? this.moreButtonIconSizeFactor,
+      switchActiveColor: switchActiveColor ?? this.switchActiveColor,
+      switchDisabledColor: switchDisabledColor ?? this.switchDisabledColor,
+      switchDisabledTrackColor: switchDisabledTrackColor ?? this.switchDisabledTrackColor,
+      switchFocusColor: switchFocusColor ?? this.switchFocusColor,
+      switchTrackColor: switchTrackColor ?? this.switchTrackColor,
     );
   }
   // -----------------------------------------------------------------------------
