@@ -15,7 +15,10 @@ class BubbleHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // --------------------
-    final double _bubbleWidth = viewModel.headerWidth ?? Bubble.clearWidth(context);
+    final double _bubbleWidth = Bubble.clearWidth(
+      context: context,
+      bubbleWidthOverride: viewModel.headerWidth,
+    );
     // --------------------
     /// LEADING ICON
     final bool _hasIcon = viewModel.leadingIcon != null;

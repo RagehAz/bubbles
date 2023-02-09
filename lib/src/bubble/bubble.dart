@@ -31,13 +31,22 @@ class Bubble extends StatelessWidget {
   final bool appIsLTR;
   final Color splashColor;
   // -----------------------------------------------------------------------------
-  static double clearWidth(BuildContext context, {double bubbleWidthOverride}) {
-    final double _bubbleWidth = bubbleWidth(context, bubbleWidthOverride: bubbleWidthOverride);
+  static double clearWidth({
+    @required BuildContext context,
+    double bubbleWidthOverride,
+  }) {
+    final double _bubbleWidth = bubbleWidth(
+        context: context,
+        bubbleWidthOverride: bubbleWidthOverride,
+    );
     const double _bubblePaddings = 10 * 2.0;
     return _bubbleWidth - _bubblePaddings;
   }
   // --------------------
-  static double bubbleWidth(BuildContext context, {double bubbleWidthOverride}) {
+  static double bubbleWidth({
+    @required BuildContext context,
+    double bubbleWidthOverride
+  }) {
     return bubbleWidthOverride ?? Scale.screenWidth(context) - 20;
   }
   // --------------------
@@ -88,7 +97,10 @@ class Bubble extends StatelessWidget {
     // --------------------
     final EdgeInsets _bubbleMargins = margin == null ? EdgeInsets.zero : Scale.superMargins(margin: margin);
     // --------------------
-    final double _bubbleWidth = bubbleWidth(context, bubbleWidthOverride: width);
+    final double _bubbleWidth = bubbleWidth(
+        context: context,
+        bubbleWidthOverride: width,
+    );
     // --------------------
     final BorderRadius _corners = corners == null ?
     borders(context)

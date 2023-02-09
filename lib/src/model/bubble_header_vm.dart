@@ -31,6 +31,8 @@ class BubbleHeaderVM {
     this.switchFocusColor = const Color.fromARGB(255, 20, 20, 80),
     this.switchDisabledColor = const Color.fromARGB(150, 200, 200, 200),
     this.switchDisabledTrackColor = const Color.fromARGB(80, 20, 20, 35),
+    this.letterSpacing,
+    this.wordSpacing,
   });
   // -----------------------------------------------------------------------------
   final double headerWidth;
@@ -60,6 +62,8 @@ class BubbleHeaderVM {
   final Color switchDisabledTrackColor;
   final Color switchFocusColor;
   final Color switchTrackColor;
+  final double letterSpacing;
+  final double wordSpacing;
   // -----------------------------------------------------------------------------
 
   /// CONSTANTS
@@ -100,6 +104,10 @@ class BubbleHeaderVM {
     Color switchDisabledTrackColor,
     Color switchFocusColor,
     Color switchTrackColor,
+    bool appIsLTR,
+    TextDirection textDirection,
+    double letterSpacing,
+    double wordSpacing,
   }){
     return BubbleHeaderVM(
       headerWidth: headerWidth ?? this.headerWidth,
@@ -127,6 +135,10 @@ class BubbleHeaderVM {
       switchDisabledTrackColor: switchDisabledTrackColor ?? this.switchDisabledTrackColor,
       switchFocusColor: switchFocusColor ?? this.switchFocusColor,
       switchTrackColor: switchTrackColor ?? this.switchTrackColor,
+      textDirection: textDirection ?? this.textDirection,
+      appIsLTR: appIsLTR ?? this.appIsLTR,
+      letterSpacing: letterSpacing ?? this.letterSpacing,
+      wordSpacing: wordSpacing ?? this.wordSpacing,
     );
   }
   // -----------------------------------------------------------------------------
@@ -157,7 +169,7 @@ class BubbleHeaderVM {
     else if (model1 != null && model2 != null){
 
       if (
-      model1.headerWidth == model2.headerWidth &&
+          model1.headerWidth == model2.headerWidth &&
           model1.leadingIcon == model2.leadingIcon &&
           model1.leadingIconSizeFactor == model2.leadingIconSizeFactor &&
           model1.leadingIconBoxColor == model2.leadingIconBoxColor &&
@@ -173,7 +185,17 @@ class BubbleHeaderVM {
           model1.headlineHeight == model2.headlineHeight &&
           model1.moreButtonIcon == model2.moreButtonIcon &&
           model1.moreButtonIconSizeFactor == model2.moreButtonIconSizeFactor &&
-          model1.headlineHighlight == model2.headlineHighlight
+          model1.headlineHighlight == model2.headlineHighlight &&
+          model1.switchActiveColor == model2.switchActiveColor &&
+          model1.switchDisabledColor == model2.switchDisabledColor &&
+          model1.switchDisabledTrackColor == model2.switchDisabledTrackColor &&
+          model1.switchFocusColor == model2.switchFocusColor &&
+          model1.switchTrackColor == model2.switchTrackColor &&
+          model1.appIsLTR == model2.appIsLTR &&
+          model1.textDirection == model2.textDirection &&
+          model1.letterSpacing == model2.letterSpacing &&
+          model1.wordSpacing == model2.wordSpacing
+
       // ValueChanged<bool> onSwitchTap
       // Function onMoreButtonTap
       // Function onLeadingIconTap
@@ -234,6 +256,15 @@ class BubbleHeaderVM {
       headlineHighlight.hashCode^
       headlineHeight.hashCode^
       moreButtonIcon.hashCode^
-      moreButtonIconSizeFactor.hashCode;
+      moreButtonIconSizeFactor.hashCode^
+      switchActiveColor.hashCode^
+      switchDisabledColor.hashCode^
+      switchDisabledTrackColor.hashCode^
+      switchFocusColor.hashCode^
+      switchTrackColor.hashCode^
+      appIsLTR.hashCode^
+      textDirection.hashCode^
+      letterSpacing.hashCode^
+      wordSpacing.hashCode;
   // -----------------------------------------------------------------------------
 }
